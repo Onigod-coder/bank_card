@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F1B2D"
+    android:fillViewport="true"
+    android:id="@+id/main">
+
+    <!-- Основной контейнер -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Интерактивная банковская карта -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            app:cardBackgroundColor="#1E2A3D"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="24dp"
+                >
+
+
+
+
+                <!-- Номер карты (центр) -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/cardNumberLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Номер карты"
+                    app:boxBackgroundColor="@android:color/transparent"
+                    app:boxBackgroundMode="none"
+                    app:boxStrokeColor="#B3E2DADA"
+                    app:boxStrokeWidth="5dp"
+                    app:boxStrokeWidthFocused="5dp"
+                    app:errorTextColor="#FF5252"
+                    app:hintTextColor="#B3FFFFFF">
+
+                    <com.google.android.material.textfield.TextInputEditText
+
+                        android:id="@+id/cardNumberEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#673AB7"
+                        android:backgroundTint="#1E2A3D"
+                        android:inputType="number"
+                        android:letterSpacing="0.1"
+                        android:maxLength="19"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        app:boxBackgroundColor="@android:color/transparent"
+                        app:boxStrokeColor="#B38E4747"
+                        app:boxStrokeWidth="5dp"
+                        app:boxStrokeWidthFocused="5dp"
+
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Нижняя строка (имя + срок действия + CVV) -->
+
+                <LinearLayout
+                    android:id="@+id/linearLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="-15dp"
+                    android:orientation="horizontal">
+
+                    <!-- Имя владельца -->
+
+                    <!-- Срок действия -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/cardHolderLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Имя владельца"
+                        app:boxBackgroundMode="none"
+                        app:boxStrokeColor="#CDDC39"
+                        app:hintTextColor="#B3FFFFFF">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/cardHolderEditText"
+                            android:layout_width="138dp"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapCharacters"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/expiryDateLayout"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:hint="ММ/ГГ"
+                        app:boxBackgroundMode="none"
+                        app:hintTextColor="#B3FFFFFF">
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- CVV (только при фокусе) -->
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/expiryDateEditText"
+                    android:layout_width="149dp"
+                    android:layout_height="39dp"
+                    android:layout_below="@+id/cardNumberLayout"
+                    android:layout_alignBottom="@+id/linearLayout3"
+                    android:layout_marginTop="31dp"
+                    android:layout_marginBottom="90dp"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cvvEditText"
+                    android:layout_width="134dp"
+                    android:layout_height="36dp"
+                    android:layout_below="@+id/cardNumberLayout"
+                    android:layout_alignBottom="@+id/linearLayout3"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginTop="31dp"
+                    android:layout_marginBottom="92dp"
+                    android:layout_toEndOf="@+id/expiryDateEditText"
+                    android:inputType="numberPassword"
+                    android:maxLength="3"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Кнопка оплаты -->
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
+
+            android:text="Оплатить"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"/>
+
+        <!-- Логотипы платежных систем -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
